@@ -1,0 +1,65 @@
+.container {
+  margin-top: 4%;
+  margin-left: 25%;
+  position: absolute;
+  align-items: center;
+  text-align: center;
+}
+
+mat-card-title{
+font-size: 30px;
+}
+.container .btn1{
+width: 150px;
+justify-content: center;
+}
+.container .btn2{
+width: 150px;
+justify-content: center;
+}
+.container .btn3{
+width: 150px;
+justify-content: center;
+}
+
+.container1 {
+  width: 600px;
+  margin-top: 4%;
+  position:top;
+  mat-card{
+    width: 600px;
+  }
+  mat-card-subtitle{
+      font-size: 35px;
+      justify-content: left;
+   }
+}
+.container1 .name {
+  font-size: 25px;
+  margin-left: 31%;
+  display:flex;
+}
+.container1 .surname {
+  font-size: 25px;
+  margin-left: 25%;
+  display:flex;
+}
+
+.container1 .email-form {
+  min-width: 40px;
+  max-width: 100px;
+  display: flex;
+  margin-left: 33%;
+}
+.container1 .phone-form {
+  margin-left: 55%;
+  min-width: 40px;
+  max-width: 150px;
+}
+.container1 .example-full-width {
+  width: 100%;
+}
+.container1 .btn4 {
+  width: 150px;
+}
+

@@ -1,0 +1,27 @@
+<div class="page">
+  <h1 class="center-h1">Moje zrzutki</h1>
+  <div class="newContainer">
+    <div class="element1">
+      <mat-card>
+        <mat-card-title>Konto</mat-card-title>
+        <br>
+        <br>
+        <button class="btn1" routerLink="/profileedit" mat-raised-button color="accent">Dane użytkownika</button>
+        <br><br>
+        <button class="btn1" routerLink="/my-list" mat-raised-button color="accent">Moje zrzutki</button>
+
+      </mat-card>
+    </div>
+
+    <div class="element2">
+      <app-fundraisings-list [editEnabled]="true" (showClicked)="onShow($event)" [fundraisings]="fundraisings"></app-fundraisings-list>
+    </div>
+  </div>
+</div>
+<mat-paginator class="footer"
+               (page)="onPageFired($event)"
+               [length]=fundraisingsLength
+               [pageIndex]="0"
+               [pageSize]="10"
+               [pageSizeOptions]="pageSizeOptions">
+</mat-paginator>

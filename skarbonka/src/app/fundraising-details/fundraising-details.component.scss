@@ -1,0 +1,67 @@
+h1 {
+  margin-top: 40px;
+}
+
+h4 {
+  margin-top: -20px;
+}
+
+.frame {
+  margin-left: 8%;
+  margin-right: 8%;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+img {
+  max-width: 100%;
+}
+
+#div-details {
+  text-align: center;
+  margin-top: 5%;
+}
+
+mat-progress-bar {
+  max-width: 60%;
+  padding-left: 20%;
+}
+
+.btn-payment {
+  width: 40%;
+  height: 60px;
+}
+
+.btn-action {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+mat-card-title {
+  font-size: 12pt;
+}
+
+.payment-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.payment-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Create 2 columns and auto-place rows */
+}
+
+mat-paginator {
+  background-color: lightgray;
+  opacity: 0.5;
+}

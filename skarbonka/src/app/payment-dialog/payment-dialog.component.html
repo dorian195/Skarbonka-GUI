@@ -1,0 +1,30 @@
+<form #form="ngForm">
+  <h1 mat-dialog-title>Dokonaj wpłaty na zrzutkę:</h1>
+
+  <mat-dialog-content class="inputFields" >
+    <mat-form-field [hideRequiredMarker]="true">
+      <input matInput
+             placeholder="Kwota donacji"
+             name="accountBalance"
+             [(ngModel)]="donation.ammount" required >
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-content class="inputFields" >
+    <mat-form-field [hideRequiredMarker]="true">
+      <input matInput
+             placeholder="Wiadomość do organizatora"
+             name="name"
+             [(ngModel)]="donation.name" required>
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-slide-toggle *ngIf="currentUser" (change)="onToggleChange($event)" color="accent">Dokonaj wpłaty anonimowej</mat-slide-toggle>
+
+  <div fxLayout="row" fxLayoutAlign="end start" fxLayoutGap="25px">
+    <mat-dialog-actions>
+      <button mat-flat-button color="accent" (click)="close()">Anuluj</button>
+      <button mat-flat-button color="accent" [disabled]="!form.valid" (click)="doPay()" >Zatwierdź</button>
+    </mat-dialog-actions>
+  </div>
+</form>

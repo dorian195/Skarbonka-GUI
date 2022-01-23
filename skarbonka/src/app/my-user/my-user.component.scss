@@ -1,0 +1,47 @@
+.card {
+  width: 25%;
+}
+//.card2 {
+//  width: 100%;
+//  margin: left;
+//}
+
+.center {
+}
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+.child {
+  loat:left; display:inline;
+}
+.drop-down {
+  margin-top: 2%;
+}
+.next-to-other {
+  float:left; display:inline; width: 49%;
+}
+.inline-block {
+  margin-left: 1em;
+  width: 25%;
+  display: inline-block;
+}
+.userdata{
+  float:left; display:inline; width: 49%; margin-left: 1em;
+}
+.description{
+  margin-top: 1em;
+}
+.container .btn1{
+  width: 150px;
+  justify-content: center;
+}
+.container .btn2{
+  width: 150px;
+  justify-content: center;
+}
+.container .btn3{
+  width: 150px;
+  justify-content: center;
+}

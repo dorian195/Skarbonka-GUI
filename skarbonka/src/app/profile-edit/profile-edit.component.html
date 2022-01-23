@@ -1,0 +1,41 @@
+<div fxLayout.gt-sm="row" fxLayout="column" fxLayoutGap="16px" class="container" class="container">
+<div fxFlex.gt-sm="50%" fxFlex>
+
+  <mat-card>
+  <mat-card-title>Konto</mat-card-title>
+  <br>
+  <br>
+  <mat-card-actions>
+    <button class="btn3" routerLink="/profile-edit" mat-raised-button color="accent">Dane użytkownika</button>
+    <br><br>
+    <button class="btn2" routerLink="/my-list" mat-raised-button color="accent">Moje zrzutki</button>
+  </mat-card-actions>
+  </mat-card>
+</div>
+
+<div fxFlex.gt-sm="85%" fxFlex class="container1">
+  <mat-card>
+  <form class="my-form" #userForm=ngForm (ngSubmit)="Submit()">
+  <mat-card-title>Dane użytkownika</mat-card-title>
+  <br>
+  <mat-card-subtitle appearance="fill">Informacje</mat-card-subtitle>
+  <br><br>
+    <mat-card-content>
+      <div fxLayout="row" fxFlex="100" fxLayoutAlign="space-around center">
+        <div fxLayout="column"><mat-card-content class="name">{{currentUser.firstName}}</mat-card-content></div>
+        <div fxLayout="column"><mat-card-content class="surname">{{currentUser.lastName}}</mat-card-content></div>
+      </div>
+    </mat-card-content>
+
+    <mat-label><h2>Płeć:</h2></mat-label>
+    <mat-card-content class="gender">{{currentUser.gender}}</mat-card-content>
+
+    <mat-label><h2>Data urodzenia:</h2></mat-label>
+    <mat-card-content class="birthdate">{{birthday}}</mat-card-content>
+  <br>
+    <mat-label><h2>Kontakt:</h2></mat-label>
+    <mat-card-content class="email">{{currentUser.email}}</mat-card-content>
+  </form>
+  </mat-card>
+</div>
+</div>

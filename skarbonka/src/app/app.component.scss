@@ -1,0 +1,29 @@
+mat-toolbar {
+  background-color: white;
+}
+
+img{
+  min-width: 200px;
+  max-width: 200px;
+  min-height: 50px;
+  max-height: 50px;
+}
+
+.instructionTxt {
+  margin-left: 15px;
+  font-size: medium;
+}
+
+.catalogTxt {
+  margin-left: 15px;
+  font-size: medium;
+  color: rgb(255, 64, 129);
+}
+
+.instructionTxt:hover {
+  color: rgb(255, 64, 129);
+}
+
+.catalogTxt:hover {
+  color: black;
+}

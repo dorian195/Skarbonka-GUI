@@ -1,0 +1,42 @@
+.card {
+  display: inline-block;
+  justify-content: left;
+}
+.search {
+  margin-bottom: 2em;
+  width: auto;
+}
+.types{
+  margin-top: 2em;
+}
+
+.newContainer {
+  position: relative;
+  margin-top: 4%;
+  overflow: hidden;
+  display: flex;
+}
+.center-h1 {
+  font-size: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 1%;
+}
+.element1 {
+margin-left: 1%;
+}
+.element2 {
+  //width: 90%;
+}
+.footer {
+  width: 100%;
+  position: relative;
+  margin-top: 5%;
+  right:0;
+  bottom:0;
+}
+.page {
+  //height: calc(100% - 150px);
+}

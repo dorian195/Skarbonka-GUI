@@ -1,0 +1,21 @@
+<mat-toolbar fxLayout="row" class="toolbar-container">
+
+  <div>
+    <button mat-button routerLink="/"><img src="/assets/skarbonka.png" alt="logo"></button>
+  </div>
+
+  <span fxFlex="100" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start">
+    <button mat-button color="black" routerLink="/rules">Jak to działa?</button>
+    <button mat-button color="accent" routerLink="/catalog">Katalog zrzutek</button>
+  </span>
+
+  <span fxFlex="100" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="end">
+    <button mat-raised-button  *ngIf="currentUser" routerLink="/profileedit" color="accent">Konto</button>
+    <button mat-raised-button  *ngIf="currentUser" color="accent" (click)="logout()">Wyloguj się</button>
+    <button mat-raised-button  *ngIf="!currentUser" routerLink="/login" color="accent">Logowanie</button>
+    <button mat-raised-button  *ngIf="!currentUser" routerLink="/register" color="accent">Rejestracja</button>
+  </span>
+
+</mat-toolbar>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,33 @@
+#containers{
+//  margin-top: 40px;
+  margin-left: 60px;
+  margin-bottom: 40px;
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+mat-card-title{
+  text-align: center;
+  margin-top: 15px !important;
+  overflow: auto;
+  min-height: 45px;
+  max-height: 45px;
+  color: rgba(2,6,24,0.78) !important;
+}
+.fundraising {
+  min-width: 250px;
+  max-width: 250px;
+  min-height: 370px;
+  max-height: 370px;
+}
+img {
+  width: 250px;
+}
+.div-img {
+  width: 250px;
+  height: 180px;
+}
+
+button {
+  min-width: 250px;
+}

@@ -1,0 +1,62 @@
+<div class="frame">
+  <br>
+  <h1 class="title">{{choosenFundraising.name}}</h1>
+  <h4 class="title">{{user.firstName}} {{user.lastName}}</h4>
+
+  <div class="row">
+    <div class="column" id="div-img">
+      <img src="{{choosenFundraising.url}}" />
+    </div>
+    <div class="column" id="div-details">
+      <h2>Zebrano {{accountBalance}} zł z {{choosenFundraising.moneyGoal}}zł </h2>
+
+      <mat-progress-bar value="{{(accountBalance/choosenFundraising.moneyGoal)*100}}"></mat-progress-bar>
+      <br>
+
+      <h2>Pozostało {{dateLeft}} dni do końca</h2>
+      <br><br>
+      <button class="btn-payment" mat-raised-button color="accent" (click)="openPaymentDialog()">Wpłać na zrzutkę</button>
+      <br><br><br>
+      <button class="btn-action" mat-raised-button color="basic" *ngIf="currentUser" (click)="addToFavorites()">Dodaj do ulubionych</button>
+      <button class="btn-action" mat-raised-button color="basic" *ngIf="currentUser" (click)="report()">Zgłoś zrzutkę</button>
+    </div>
+  </div>
+
+  <br>
+  <h2>Opis zrzutki</h2>
+  <br>
+  <h4>{{choosenFundraising.description}}</h4>
+  <br><br>
+  <h2>Wpłaty</h2>
+  <br>
+  <div *ngIf = "donations.length != 0 ; else elseBlock">
+    <div class="payment-column" >
+      <ng-container id="container" *ngFor="let donation of donationsPageable">
+        <mat-card class="donation">
+          <mat-card-title *ngIf="donation.anonymous === true">Wpłata anonimowa: {{donation.ammount}}zł</mat-card-title>
+          <mat-card-title *ngIf="donation.anonymous === false">{{donation.user.firstName}} {{donation.user.lastName}}: {{donation.ammount}}zł</mat-card-title>
+          <mat-card-subtitle >Data wpłaty: {{formatDate(donation.createdDate)}}</mat-card-subtitle>
+          <mat-card-subtitle > {{donation.name}} </mat-card-subtitle>
+        </mat-card>
+      </ng-container>
+    </div>
+    <mat-paginator
+      (page)="onPageFired($event)"
+      [length]=donations.length
+      [pageIndex]="0"
+      [pageSizeOptions]="[6]">
+    </mat-paginator>
+  </div>
+
+  <ng-template #elseBlock>
+    <h3>Na tę zrzutkę nie dokonano jeszcze żadnej wpłaty.</h3>
+   </ng-template>
+
+  <br><br>
+  <h2>Komentarze</h2>
+  <br>
+
+  <app-comment-section [fundraising]="choosenFundraising"></app-comment-section>
+</div>
+
+

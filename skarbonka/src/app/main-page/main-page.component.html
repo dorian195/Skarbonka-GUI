@@ -1,0 +1,11 @@
+
+<div class="container">
+  <img src="/assets/banner.png" alt="background">
+  <button class="btn" mat-raised-button color="accent" routerLink="/create-fundraising">Załóż zrzutkę</button>
+</div>
+<br>
+
+<h2>Aktywne zrzutki</h2>
+<br>
+
+<app-fundraisings-list [fundraisings]="fundraisings" (choosenFundraising)="onShow($event)"></app-fundraisings-list>

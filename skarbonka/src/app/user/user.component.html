@@ -1,0 +1,21 @@
+<div class="page">
+  <div class="newContainer">
+    <div class="element1">
+
+      <app-other-user-profile class="element"></app-other-user-profile>
+    </div>
+
+    <div class="element2">
+      <app-fundraisings-list (showClicked)="onShow($event)" [fundraisings]="fundraisings"></app-fundraisings-list>
+    </div>
+
+  </div>
+
+</div>
+<mat-paginator class="footer"
+               (page)="onPageFired($event)"
+               [length]=fundraisingsLength
+               [pageIndex]="0"
+               [pageSize]="10"
+               [pageSizeOptions]="pageSizeOptions">
+</mat-paginator>

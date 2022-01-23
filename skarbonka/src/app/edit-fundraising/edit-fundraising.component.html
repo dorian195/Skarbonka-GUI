@@ -1,0 +1,32 @@
+<div class="container">
+    <mat-card class="box">
+      <mat-card-header>Edytuj swoją zrzutkę</mat-card-header>
+      <br>
+      <form class="example-form" [formGroup]="editFundraisingForm" (ngSubmit)="onSubmit()">
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <input matInput type="text" placeholder="Nazwa zrzutki" formControlName="fundraisingName" [formControl]="fundraisingNameFormControl">
+          </mat-form-field>
+          <br>
+          <mat-form-field class="example-full-width">
+            <input matInput type="number" placeholder="Cel pieniężny" formControlName="fundraisingAmount">
+          </mat-form-field>
+          <br>
+          <mat-form-field class="example-full-width">
+            <textarea matInput type="text" placeholder="Opis zrzutki" formControlName="fundraisingDescription"></textarea>
+          </mat-form-field>
+          <br>
+          <mat-form-field class="example-full-width">
+            <mat-label>Kategoria</mat-label>
+            <mat-select formControlName="fundraisingCategory">
+              <mat-option *ngFor="let category of categories" [value]="category.id">
+                {{category.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <br>
+        </mat-card-content>
+        <button mat-flat-button color="accent" class="btn-block">Edytuj zrzutkę</button>
+      </form>
+    </mat-card>
+  </div>

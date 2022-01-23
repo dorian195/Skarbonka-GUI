@@ -1,0 +1,16 @@
+<section id="containers" *ngFor="let fundraising of fundraisings">
+  <mat-card class="fundraising">
+    <mat-card-title > {{fundraising.name}}
+      <button *ngIf="editEnabled" mat-flat-button color="accent" (click)="navigateToEdit(this.fundraising)" >Edytuj</button>
+    </mat-card-title>
+    <div class="div-img">
+      <img src="{{fundraising.url}}" />
+    </div>
+    <mat-card-subtitle >Data zakończenia zbiórki: {{formatDate(fundraising.endDate)}}</mat-card-subtitle>
+    <mat-card-subtitle >Zebrano {{fundraising.accountBalance}}zł z {{fundraising.moneyGoal}}zł  </mat-card-subtitle>
+    <mat-progress-bar value="{{(fundraising.accountBalance/fundraising.moneyGoal)*100}}"></mat-progress-bar>
+    <br>
+      <button mat-flat-button color="accent" (click)="show(this.fundraising)">Szczegóły</button>
+  </mat-card>
+
+</section>

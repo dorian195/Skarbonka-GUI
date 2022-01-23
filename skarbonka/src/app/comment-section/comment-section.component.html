@@ -1,0 +1,34 @@
+<form #tdForm="ngForm" *ngIf="currentUser" >
+     <div class="container-grid">
+         <mat-form-field [hideRequiredMarker]="true" appearance="fill">
+             <input matInput
+                    placeholder="Dodaj komentarz"
+                    name="text"
+                    [(ngModel)]="comment.text" required>
+         </mat-form-field>
+         <button mat-raised-button color="accent" [disabled]="this.currentUser===null || !tdForm.valid" (click)=" sendComment(); tdForm.resetForm({})" >Skomentuj</button>
+     </div>
+</form>
+
+<br>
+
+<div *ngIf = "comments.length != 0 ; else elseBlock">
+  <section id="container" *ngFor="let comment of commentsPageable">
+    <mat-card class="comment">
+      <h4>Autor: {{comment.user.firstName}} {{comment.user.lastName}} </h4>
+      <h2>{{comment.text}}</h2>
+      <br>
+    </mat-card>
+  </section>
+  <mat-paginator
+    (page)="onPageFired($event)"
+    [length]=comments.length
+    [pageIndex]="0"
+    [pageSizeOptions]="[3]">
+  </mat-paginator>
+</div>
+
+<ng-template #elseBlock>
+  <h3>Nie ma jeszcze komentarzy.</h3>
+  <br><br>
+</ng-template>

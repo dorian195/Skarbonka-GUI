@@ -1,0 +1,51 @@
+<div class="page">
+  <h1 class="center-h1">Katalog zrzutek</h1>
+  <div class="newContainer">
+    <div class="element1">
+      <mat-card class="card">
+
+        <mat-card-title>
+          <button mat-stroked-button (click)="search()">Szukaj</button>
+        </mat-card-title>
+        <mat-form-field appearance="fill" class="search">
+          <mat-label>wpisz nazwę</mat-label>
+          <input matInput [(ngModel)]="searchInput">
+        </mat-form-field>
+
+        <mat-card-title class="types">Kategorie zrzutek</mat-card-title>
+        <mat-card-actions>
+          <mat-radio-group [(ngModel)]="radioData">
+            <div *ngFor="let category of categories">
+              <mat-radio-button value="{{category.name}}" name="{{category.id}}">{{category.name}}</mat-radio-button>
+            </div>
+          </mat-radio-group>
+
+        </mat-card-actions>
+        <div>
+          <mat-card-title>Sortowanie</mat-card-title>
+        </div>
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-select [(ngModel)]="sortField">
+              <mat-option value="newest">Najnowsze</mat-option>
+              <mat-option value="popular">Popularne</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </mat-card>
+    </div>
+
+    <div class="element2">
+      <app-fundraisings-list (choosenFundraising)="onShow($event)" [fundraisings]="fundraisings"></app-fundraisings-list>
+    </div>
+
+  </div>
+
+</div>
+<mat-paginator class="footer"
+               (page)="onPageFired($event)"
+               [length]=fundraisingsLength
+               [pageIndex]="0"
+               [pageSize]="10"
+               [pageSizeOptions]="pageSizeOptions">
+</mat-paginator>
